@@ -2,14 +2,14 @@
 
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {InputOTP, InputOTPGroup, InputOTPSlot} from "@/components/ui/input-otp";
-import {useState, useTransition} from "react";
+import {useState, useTransition, Suspense} from "react";
 import {Button} from "@/components/ui/button";
 import {authClient} from "@/lib/auth-client";
 import {useRouter, useSearchParams} from "next/navigation";
 import {toast} from "sonner";
 import {Loader2} from "lucide-react";
 
-export default function VerifyRequest() {
+function VerifyRequestContent() {
     const router = useRouter();
     const [otp, setOtp] = useState("");
     const [emailPending, startTransition] = useTransition();
@@ -73,5 +73,13 @@ export default function VerifyRequest() {
         </CardContent>
         </Card>
 
+    )
+}
+
+export default function VerifyRequest() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <VerifyRequestContent />
+        </Suspense>
     )
 }
