@@ -4,7 +4,6 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {InputOTP, InputOTPGroup, InputOTPSlot} from "@/components/ui/input-otp";
 import {useState, useTransition} from "react";
 import {Button} from "@/components/ui/button";
-import {func} from "fast-check";
 import {authClient} from "@/lib/auth-client";
 import {useRouter, useSearchParams} from "next/navigation";
 import {toast} from "sonner";
