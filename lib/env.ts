@@ -9,6 +9,8 @@ export const env = createEnv({
         AUTH_GITHUB_CLIENT_ID: z.string().min(1),
         AUTH_GITHUB_CLIENT_SECRET: z.string().min(1),
         RESEND_API_KEY: z.string().min(1),
+        ARCJET_KEY: z.string().min(1),
+        ARCJET_KEY: z.string().min(1),
     },
     runtimeEnv: {
         DATABASE_URL: process.env.DATABASE_URL,
@@ -17,6 +19,8 @@ export const env = createEnv({
         AUTH_GITHUB_CLIENT_ID: process.env.AUTH_GITHUB_CLIENT_ID,
         AUTH_GITHUB_CLIENT_SECRET: process.env.AUTH_GITHUB_CLIENT_SECRET,
         RESEND_API_KEY: process.env.RESEND_API_KEY,
+        ARCJET_KEY: process.env.ARCJET_KEY,
+        ARCJET_KEY: process.env.ARCJET_KEY,
     },
     experimental__runtimeEnv: {}
 });
