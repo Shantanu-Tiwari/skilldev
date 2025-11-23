@@ -26,7 +26,7 @@ export function LoginForm() {
                     },
                     onError: (error) => {
                         console.error('GitHub sign-in error:', error);
-                        toast.error(error?.message || "Failed to sign in with GitHub");
+                        toast.error("Failed to sign in with GitHub");
                     },
                 },
             })
@@ -47,7 +47,7 @@ export function LoginForm() {
                         router.push(`/verify-request?email=${email}`);
                     },
                     onError: (error) => {
-                        toast.error(error?.message || 'Failed to send email');
+                        toast.error('Failed to send email');
                     }
                 }
             })
