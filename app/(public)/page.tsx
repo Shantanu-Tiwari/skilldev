@@ -39,19 +39,6 @@ const features:featureProps[] = [
 ]
 
 export default function Home() {
-    const router = useRouter();
-    const {
-        data: session} = authClient.useSession()
-    async function signOut() {
-        await authClient.signOut({
-            fetchOptions: {
-                onSuccess: () => {
-                    router.push("/");
-                    toast.success('Signed out successfully')
-                },
-            },
-        });
-    }
     return (
         <>
         <section className="relative py-20">
@@ -81,7 +68,7 @@ export default function Home() {
             </div>
 
         </section>
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
                 {features.map((feature, index) => (
                     <Card key={index} className="hover:shadow-lg transition-shadow">
                         <CardHeader>

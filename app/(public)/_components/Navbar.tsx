@@ -5,11 +5,12 @@ import Logo from '@/public/logo-new.png'
 import {ThemeToggle} from "@/components/ui/themeToggle";
 import {authClient} from "@/lib/auth-client";
 import {buttonVariants} from "@/components/ui/button";
+import {UserDropdown} from "@/app/(public)/_components/UserDropdown";
 
 const navigationItems = [
     {name: 'About Us', href: '/'},
     {name: 'Courses', href: '/courses'},
-    {name: 'Dashboard', href: "/dashboard"}
+    {name: 'Dashboard', href: "/admin"}
 ]
 
 export function Navbar() {
@@ -34,7 +35,7 @@ export function Navbar() {
                 ))}
                 <div className="flex items-center space-x-4">
                     {isPending ? null : session ? (
-                    <p>logged in</p>
+                    <UserDropdown email={session.user.email} name={session.user.name} image={session.user.image || ''}/>
                 ):(
                     <>
                     <Link href="/login" className={buttonVariants({variant: "secondary"})}>
